@@ -4,10 +4,13 @@
  */
 package com.udemy.udemy.repositories;
 
+import org.springframework.stereotype.Repository;
+
 /**
  *
  * @author Admin
  */
+@Repository
 public interface RolRepositorio {
     
 }

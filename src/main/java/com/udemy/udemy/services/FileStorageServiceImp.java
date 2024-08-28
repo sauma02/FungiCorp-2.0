@@ -4,13 +4,10 @@
  */
 package com.udemy.udemy.services;
 
-import org.springframework.stereotype.Service;
-
 /**
  *
  * @author Admin
  */
-@Service
-public class ProductoServicio {
+public class FileStorageServiceImp {
     
 }

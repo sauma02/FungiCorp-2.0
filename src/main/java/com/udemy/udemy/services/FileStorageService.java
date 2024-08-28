@@ -2,15 +2,12 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Interface.java to edit this template
  */
-package com.udemy.udemy.repositories;
-
-import org.springframework.stereotype.Repository;
+package com.udemy.udemy.services;
 
 /**
  *
  * @author Admin
  */
-@Repository
-public interface ImagenRepositorio {
+public interface FileStorageService {
     
 }

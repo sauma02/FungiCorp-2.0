@@ -25,7 +25,7 @@ import lombok.Setter;
 public class Imagen {
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
-    @Column(name="Producto_id")
+        @Column(name="Imagen_id")
     private String id;
     private String fileName;
     private String fileType;

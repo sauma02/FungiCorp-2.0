@@ -18,6 +18,6 @@ public class HomeController {
     @GetMapping("/")
     @ResponseBody
     public String home(){
-        return "hola mundo";
+        return "home.html";
     }
 }
