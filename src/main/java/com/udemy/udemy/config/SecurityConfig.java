@@ -33,7 +33,7 @@ public class SecurityConfig {
                     .permitAll()
                     )
                     .authorizeHttpRequests(req -> req
-                    .requestMatchers("/**", "/static/**", "/js/**", "/css/**", "/images/**", "/login/**").permitAll()
+                    .requestMatchers("/**", "/static/**", "/js/**", "/css/**", "/images/**", "/login/**", "/templates/**").permitAll()
                     .anyRequest().authenticated()
                     )
                     .build();
