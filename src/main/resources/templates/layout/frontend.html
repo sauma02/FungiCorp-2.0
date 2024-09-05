@@ -40,7 +40,9 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
                                     <!-- Custom styles for this template -->
                                     <link th:href="@{product.css}" rel="stylesheet">
                                     <link th:href="@{/fontawesome-free-6.6.0/css/all.css}" rel="stylesheet">
-                                    <link th:href="@{/css/jquery.alerts.min.css}" rel="stylesheet">
+                                    
+                                    <link th:href="@{/js/node_modules/sweetalert2/dist/sweetalert2.css}" rel="stylesheet">
+                                     <link th:href="@{/js/node_modules/sweetalert2/dist/sweetalert2.min.css}" rel="stylesheet">
                                         </head>
     <header th:fragment="header" class="site-header sticky-top py-1">
   <nav class="container d-flex flex-column flex-md-row justify-content-between">
@@ -105,8 +107,10 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
                                                 </div>
                                             </footer>
                                             <div th:fragment="scripts">
-                                            <scrip th:src="@{/js/jquery.min.js}" ></scrip>  
-                                            <scrip th:src="@{/js/jquery.alerts.min.js}" ></scrip>  
+                                            <script th:src="@{/js/node_modules/sweetalert2/dist/sweetalert2.all.js}" ></script>  
+                                            <script th:src="@{/js/node_modules/sweetalert2/dist/sweetalert2.all.min.js}" ></script>  
+                                            <script th:src="@{/js/node_modules/jquery/dist/jquery.min.js}" ></script>  
+                                            <script th:src="@{/js/jquery.alerts.min.js}" ></script>  
                                             <script type="text/javascript" th:src="@{/js/funciones.js}"></script>
                                             <script type="text/javascript" th:src="@{/js/bootstrap.min.js}"></script>
                                             <script type="text/javascript" th:src="@{/js/bootstrap.bundle.min.js}"></script>
