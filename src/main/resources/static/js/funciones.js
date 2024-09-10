@@ -9,3 +9,4 @@ function carga_ajax_get(ruta, valor, div){
     });
     return false;
 }
+

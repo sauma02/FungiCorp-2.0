@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this template
+-->
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+    <head th:replace="layout/frontend :: head(~{::title},~{::links})">
+        
+         <link th:href="@{product.css}" rel="stylesheet">
+             
+    </head>
+    <body>
+        <header th:replace="layout/frontend :: header" ></header>
+
+        <main class="container">
+            <form name="form" th:action="@{/valids}" method="POST" th:object="${usuario}">
+                <div class="form-group">
+                    <label>Nombre:</label>
+                    <input type="text" th:field="*{nombre}" id="nombre" class="form-control">
+                        <!-- Se establece un div con un condicional if para llamar al map de errores, este con un y containsKey() para
+                        para decirle al map que busque el valor de dicho resultado con dicha llave-->
+                        <div class="alert alert-danger" th:if="${errors != null && errors.containsKey('nombre')}" th:text="${errors.nombre}"></div>
+                </div>
+                
+                <div class="form-group">
+                    <label>Usuario:</label>
+                    <input type="text" th:field="*{usuario}" id="usuario" class="form-control">
+                </div>
+                <div class="form-group">
+                    <label>Contraseña:</label>
+                    <input type="text" th:field="*{password}" id="password" class="form-control">
+                </div>
+                <div class="form-group">
+                    <label>Correo:</label>
+                    <input type="email" th:field="*{correo}" id="correo" class="form-control">
+                </div>
+                <div class="form-group">
+                    <label>Contacto:</label>
+                    <input type="text" th:field="*{numero}" id="contacto" class="form-control">
+                </div>
+                <hr/>
+                <a href="javascript:void(0);" class="btn btn-info" onclick="document.form.submit();">Enviar</a>
+                
+                
+                
+                
+            </form>
+            
+            
+
+        </main>
+        <footer th:replace="layout/frontend :: footer"></footer>
+
+
+        <div th:replace="layout/frontend :: scripts">
+            <script type="text/javascript">
+                $(document).ready(function() {
+                    $(".fancybox").fancybox({
+                        closeBtn: true,
+                        openEffect : 'zoom',
+                        closeEffect : 'fade'
+                    });
+                    });
+                
+            </script> 
+        </div>
+    </body>
+</html>

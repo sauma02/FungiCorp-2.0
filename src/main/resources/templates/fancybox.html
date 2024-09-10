@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this template
+-->
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+    <head th:replace="layout/frontend :: head(~{::title},~{::links})">
+        
+         <link th:href="@{product.css}" rel="stylesheet">
+             
+    </head>
+    <body>
+        <header th:replace="layout/frontend :: header" ></header>
+
+        <main class="container">
+            <h1>FANCYBOX</h1>
+            <!-- Se pone esa funcion para bloquear el boton  -->
+            <!-- Se pone en la ruta el ref de la imagen y en clase el fancybox para que cargue el modal -->
+            <a th:href="@{images/harold.jpg}" class="fancybox" >
+                <img th:src="@{images/harold.jpg}" style="width: 100px; height: 100px;" />
+            </a>
+            
+            
+
+        </main>
+        <footer th:replace="layout/frontend :: footer"></footer>
+
+
+        <div th:replace="layout/frontend :: scripts">
+            <script type="text/javascript">
+                $(document).ready(function() {
+                    $(".fancybox").fancybox({
+                        closeBtn: true,
+                        openEffect : 'zoom',
+                        closeEffect : 'fade'
+                        
+                    });
+                    });
+                
+            </script> 
+        </div>
+    </body>
+</html>

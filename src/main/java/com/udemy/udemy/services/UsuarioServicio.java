@@ -7,6 +7,7 @@ package com.udemy.udemy.services;
 import com.udemy.udemy.entities.Usuario;
 import com.udemy.udemy.repositories.UsuarioRepositorio;
 import java.util.Collection;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Service;
@@ -17,9 +18,12 @@ import org.springframework.stereotype.Service;
  */
 @Service
 public class UsuarioServicio implements UserDetails {
+    @Autowired
+    private UsuarioRepositorio usuarioRepositorio;
     
-    public Usuario crearUsuario(){
-        return new Usuario();
+    public Usuario crearUsuario(Usuario usuario){
+        usuarioRepositorio.save(usuario);
+        return usuario;
     }
 
     @Override
