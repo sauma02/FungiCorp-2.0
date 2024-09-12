@@ -8,6 +8,8 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.validation.constraints.Email;
+import jakarta.validation.constraints.NotEmpty;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -22,10 +24,16 @@ public class Usuario {
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
     private String id;
+    @NotEmpty(message="esta vacio")
     private String nombre;
+    @NotEmpty(message="esta vacio")
     private String usuario;
+    @NotEmpty(message="esta vacio")
     private String password;
+    @NotEmpty(message="esta vacio")
+    @Email(message="ingresado no es valido")
     private String correo;
+    @NotEmpty(message="esta vacio")
     private String numero;
 
     public Usuario(String id, String nombre, String usuario, String password, String correo, String numero) {
