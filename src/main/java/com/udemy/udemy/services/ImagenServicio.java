@@ -4,7 +4,11 @@
  */
 package com.udemy.udemy.services;
 
+import com.udemy.udemy.entities.Imagen;
+import com.udemy.udemy.repositories.ImagenRepositorio;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 /**
  *
@@ -12,5 +16,12 @@ import org.springframework.stereotype.Service;
  */
 @Service
 public class ImagenServicio {
+    @Autowired
+    private ImagenRepositorio imagenRepositorio;
+    
+    public Imagen guardarImagen(Imagen imagen){
+        imagenRepositorio.save(imagen);
+        return imagen;
+    }
     
 }

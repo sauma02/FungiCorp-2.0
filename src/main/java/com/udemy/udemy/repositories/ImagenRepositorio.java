@@ -4,6 +4,8 @@
  */
 package com.udemy.udemy.repositories;
 
+import com.udemy.udemy.entities.Imagen;
+import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 /**
@@ -11,6 +13,7 @@ import org.springframework.stereotype.Repository;
  * @author Admin
  */
 @Repository
-public interface ImagenRepositorio {
+public interface ImagenRepositorio extends JpaRepository<Imagen, String> {
     
+  
 }

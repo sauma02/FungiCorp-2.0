@@ -1,6 +1,7 @@
 com\udemy\udemy\services\FileStorageServiceImp.class
 com\udemy\udemy\services\PasswordTokenServicio.class
 com\udemy\udemy\entities\PasswordToken.class
+com\udemy\udemy\utilidades\Utilidades.class
 com\udemy\udemy\repositories\ImagenRepositorio.class
 com\udemy\udemy\entities\Imagen.class
 com\udemy\udemy\config\SecurityConfig.class

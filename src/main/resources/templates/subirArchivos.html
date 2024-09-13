@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this template
+-->
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+    <head th:replace="layout/frontend :: head(~{::title},~{::links})">
+        
+         <link th:href="@{product.css}" rel="stylesheet">
+             
+    </head>
+    <body>
+        <header th:replace="layout/frontend :: header" ></header>
+
+        <main class="container">
+            <h1>Subir Archivos</h1>
+             
+            <div th:if="${mensaje!=null}" th:class="alert alert-'+${clase}+' alert-dismissable fade show">
+                <span th:text="${mensaje}"></span> 
+                <button th:if="${mensaje != null}" type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                
+            </div>
+            <form name="form" th:action="@{/imagenesForm}" method="POST" th:object="${imagen}" enctype="multipart/form-data">
+
+                
+                <div class="form-group">
+                    <label>Imagen: </label>
+                    <input type="file" name="archivoImagen" id="archivoImagen" class="form-control">
+                </div>
+                
+                <hr/>
+                <a href="javascript:void(0);" class="btn btn-info" onclick="document.form.submit();">Enviar</a>
+                
+                
+                
+                
+            </form>
+            
+            
+
+        </main>
+        <footer th:replace="layout/frontend :: footer"></footer>
+
+
+        <div th:replace="layout/frontend :: scripts">
+            <script type="text/javascript">
+                $(document).ready(function() {
+                    $(".fancybox").fancybox({
+                        closeBtn: true,
+                        openEffect : 'zoom',
+                        closeEffect : 'fade'
+                    });
+                    });
+                
+            </script> 
+        </div>
+    </body>
+</html>
