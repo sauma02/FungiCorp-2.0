@@ -13,7 +13,7 @@ import org.springframework.web.multipart.MultipartFile;
  * @author Admin
  */
 public class Utilidades {
-    public static String guardarArchivo(MultipartFile file, String ruta){
+    public static String guardarArchivo(MultipartFile file, String ruta) throws Exception{
         if(Utilidades.validaImagen(file.getContentType()) == false){
             return "no";
         }else{
@@ -26,7 +26,9 @@ public class Utilidades {
                 file.transferTo(imageFile);
                 return nombre;
             } catch (IOException e) {
-                return "Error al subir el archivo";
+                System.err.println(e);
+                throw new Exception(e);
+                
             }
 
         }

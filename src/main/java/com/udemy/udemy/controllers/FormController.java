@@ -117,7 +117,8 @@ public class FormController {
                 flash.addAttribute("mensaje", "No se ha cargado ningun archivo jpg, png, jpeg");
                 return "redirect:/imagenesForm";
             } else {
-                String nombreImagen = Utilidades.guardarArchivo(file, this.ruta_upload + "imagenes");
+                String nombreImagen = Utilidades.guardarArchivo(file, this.ruta_upload + "images/");
+                
                 if (nombreImagen == "no") {
                     flash.addAttribute("clase", "danger");
                     flash.addAttribute("mensaje", "El formato no es valido, porfavor solo suba archivos JPG, PNG o JPEG");
